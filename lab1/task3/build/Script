@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "==================================="
+echo "Сборка task3 и программы"
+echo "==================================="
+
+gcc -c -fPIC ../hello_from_dyn_runtime_lib.c -o hello.o
+gcc -shared -o libhello.so hello.o
+gcc ../main.c -o program -ldl
+
+echo "Запуск program"
+echo "-----------------------------------"
+
+./program

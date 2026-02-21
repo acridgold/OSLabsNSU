@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "==================================="
+echo "Сборка динамической библиотеки и программы"
+echo "==================================="
+
+# 1. Компилируем библиотеку в объектный файл
+echo "[1/4] Компиляция dynamic_lib.c -> dynamic_lib.o"
+gcc -c -fPIC ../dynamic_lib.c -o dynamic_lib.o
+
+# 2. Создаём динамическую библиотеку
+echo "[2/4] Создание libdynamic.so"
+gcc -shared -o libdynamic.so dynamic_lib.o
+
+# 3. Компилируем программу
+echo "[3/4] Компиляция программы main.c"
+gcc ../main.c -L. -ldynamic -o program -Wl,-rpath,.
+
+# 4. Запускаем программу
+echo "[4/4] Запуск program"
+echo "-----------------------------------"
+
+./program
