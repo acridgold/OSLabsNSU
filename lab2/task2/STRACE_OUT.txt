@@ -1,0 +1,4 @@
+execve("./program", ["./program"], 0x7ffc712db730 /* 60 vars */) = 0
+write(1, "Hello world\n", 12)           = 12
+exit(0)                                 = ?
++++ exited with 0 +++
