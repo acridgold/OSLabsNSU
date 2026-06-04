@@ -4,6 +4,6 @@ Done:
 - lab2 full
 - lab3 full
 - lab4 full
-- lab5 1,2
-- lab6 1,2
+- lab5 full
+- lab6 full
 - lab7 full
